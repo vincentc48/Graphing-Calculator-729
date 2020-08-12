@@ -1,13 +1,66 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#canvas {
+  display: block;
+  border: none; /*this is important so that the background can align to the canvas the the pointers and locate correctly*/
+  box-sizing: border-box;
+  position: relative;
+  z-index: 11;
+}
+
+#canvas-container {
+  display: block;
+  background-color: blue;
+  margin: auto;
+  box-sizing: content-box; /*important, so the border doesn't interfere with spacing and alignment of the container and things positioned with it.*/
+  border: 2px solid black;
+  position: relative;
+}
+
+#canvas-marker {
+  width: 7px;
+  height: 7px;
+  top: 1;
+  background-color: darkgrey;
+  border: 2px black solid;
+  z-index: -100;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+#canvas-upperright-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: lightgrey;
+  z-index: 12;
+}
+
+#canvas-upperleft-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightgrey;
+  z-index: 12;
+}
+
+#canvas-lowerleft-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: lightgrey;
+  z-index: 12;
 }
